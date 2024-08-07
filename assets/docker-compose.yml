@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  clients-db:
+    image: mongo:4.4
+    container_name: clients-db
+    environment:
+      MONGO_INITDB_DATABASE: clients_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - clients-db-data:/data/db
+
+  produits-db:
+    image: mongo:4.4
+    container_name: produits-db
+    environment:
+      MONGO_INITDB_DATABASE: produits_db
+    ports:
+      - "27018:27017"
+    volumes:
+      - produits-db-data:/data/db
+
+  commandes-db:
+    image: mongo:4.4
+    container_name: commandes-db
+    environment:
+      MONGO_INITDB_DATABASE: commandes_db
+    ports:
+      - "27019:27017"
+    volumes:
+      - commandes-db-data:/data/db
+
+volumes:
+  clients-db-data:
+  produits-db-data:
+  commandes-db-data:
