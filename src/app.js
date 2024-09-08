@@ -1,8 +1,18 @@
 import express from 'express'
 import configure from './configurations/configuration.js'
+import logger from './middlewares/logger.js'
+import router from './routes/product.js'
 
 async function main () {
-    const app = express()
+    const app = express();
+
+    configure();
+
+    app.use(logger);
+
+    app.use(express.json());
+
+    app.use('/products', router);
 
     await configure(app)
     app.listen(process.env.PORT, (err) => {
