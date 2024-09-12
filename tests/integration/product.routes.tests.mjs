@@ -63,13 +63,13 @@ describe('Product Routes', function() {
     assert.deepEqual(response.body.product, expectedProduct);
   });
 
-/*  it('should create a product', function(done) { // Notez l'utilisation de "done" ici
+  it('should create a product', function(done) { // Notez l'utilisation de "done" ici
     const newProduct = {
         fields: {
             name: 'Product 1',
             description: 'Description 1',
-            price: 100,
-            stock_quantity: 10
+            price: "100",
+            stock_quantity: "10"
         }
     };
 
@@ -92,8 +92,8 @@ it('should update a product', function(done) { // Notez l'utilisation de "done" 
     const updatedFields = {
         name: 'Updated Product',
         description: 'Updated Description',
-        price: 150,
-        stock_quantity: 20
+        price: "150",
+        stock_quantity: "20"
     };
 
     const updatedProduct = { id: productId, ...updatedFields };
@@ -110,7 +110,7 @@ it('should update a product', function(done) { // Notez l'utilisation de "done" 
         });
 });
 
-*/
+
 
   it('should delete a product', async function() {
     const productId = '1';
