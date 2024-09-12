@@ -5,7 +5,21 @@
   "main": "app.js",
   "scripts": {
     "start": "node -r dotenv/config ./src/app.js",
-    "test": "mocha --require @babel/register ./tests/**/*.mjs"
+    "test": "nyc mocha --recursive 'tests/**/*.mjs'"
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "tests/**/*.mjs"
+    ],
+    "reporter": [
+      "html",
+      "text"
+    ],
+    "all": true,
+    "check-coverage": true
   },
   "mocha": {
     "recursive": true,
@@ -29,6 +43,7 @@
     "assert": "^2.1.0",
     "chai": "^5.1.1",
     "mocha": "^10.7.3",
+    "nyc": "^17.0.0",
     "sinon": "^18.0.1",
     "supertest": "^7.0.0"
   }
