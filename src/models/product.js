@@ -14,7 +14,7 @@ const schema = new mongoose.Schema(
             type: Number,
             required: true
         },
-        stock_quantity: {
+        stockQuantity: {
             type: Number,
             required: true
         }
