@@ -5,14 +5,15 @@
   "main": "app.js",
   "scripts": {
     "start": "node -r dotenv/config ./src/app.js",
-    "test": "nyc mocha --recursive 'tests/**/*.mjs'"
+    "test": "c8 mocha --recursive 'tests/**/*.mjs'"
   },
-  "nyc": {
+  "c8": {
     "include": [
       "src/**/*.js"
     ],
     "exclude": [
-      "tests/**/*.mjs"
+      "tests/**/*.mjs",
+      "src/app.js"
     ],
     "reporter": [
       "html",
@@ -34,13 +35,15 @@
     "express": "^4.19.2",
     "express-async-errors": "^3.1.1",
     "joi": "^17.13.3",
-    "mongoose": "^8.4.4"
+    "mongoose": "^8.4.4",
+    "products-service": "file:"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.4",
     "@babel/register": "^7.24.6",
     "assert": "^2.1.0",
+    "c8": "^10.1.2",
     "chai": "^5.1.1",
     "mocha": "^10.7.3",
     "nyc": "^17.0.0",
