@@ -69,7 +69,7 @@ describe('Product Routes', function() {
             name: 'Product 1',
             description: 'Description 1',
             price: "100",
-            stock_quantity: "10"
+            stockQuantity: "10"
         }
     };
 
@@ -93,7 +93,7 @@ it('should update a product', function(done) { // Notez l'utilisation de "done" 
         name: 'Updated Product',
         description: 'Updated Description',
         price: "150",
-        stock_quantity: "20"
+        stockQuantity: "20"
     };
 
     const updatedProduct = { id: productId, ...updatedFields };

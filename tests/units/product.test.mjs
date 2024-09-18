@@ -10,13 +10,13 @@ describe('Product Model', function() {
             name: 'Product 1',
             description: 'Description 1',
             price: 100,
-            stock_quantity: 10
+            stockQuantity: 10
         };
         const product = new Product(productData);
         assert.strictEqual(product.name, 'Product 1');
         assert.strictEqual(product.description, 'Description 1');
         assert.strictEqual(product.price, 100);
-        assert.strictEqual(product.stock_quantity, 10);
+        assert.strictEqual(product.stockQuantity, 10);
     });
 });
 
@@ -45,7 +45,7 @@ describe('Product Service', function() {
                 name: 'Product 1',
                 description: 'Description 1',
                 price: 100,
-                stock_quantity: 10
+                stockQuantity: 10
             };
             const product = new Product(productData);
             saveStub.resolves(product);
@@ -55,7 +55,7 @@ describe('Product Service', function() {
             assert.deepEqual(savedProduct.name, 'Product 1');
             assert.deepEqual(savedProduct.description, 'Description 1');
             assert.deepEqual(savedProduct.price, 100);
-            assert.deepEqual(savedProduct.stock_quantity, 10);
+            assert.deepEqual(savedProduct.stockQuantity, 10);
             assert(saveStub.calledOnce);
         });
     });
