@@ -17,7 +17,7 @@ export default class ProductService {
     // Fonction pour se connecter à RabbitMQ et créer un canal
     async initRabbitMQ() {
         try {
-            const connection = await amqp.connect('http://51.75.140.58/rabbitmq/'); // Connexion à RabbitMQ
+            const connection = await amqp.connect('amqp://api_user:Hl@2t408@51.75.140.58:5672'); // Connexion à RabbitMQ
             this.rabbitmqChannel = await connection.createChannel(); // Création d'un canal
             console.log('Connected to RabbitMQ');
         } catch (error) {
