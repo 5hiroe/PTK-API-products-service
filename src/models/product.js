@@ -14,7 +14,7 @@ const schema = new mongoose.Schema(
             type: Number,
             required: true
         },
-        stock_quantity: {
+        stockQuantity: {
             type: Number,
             required: true
         }
@@ -22,4 +22,4 @@ const schema = new mongoose.Schema(
     { timestamps: true }
 )
 
-module.exports = mongoose.model('Product', schema)
+export default mongoose.model('Product', schema)
