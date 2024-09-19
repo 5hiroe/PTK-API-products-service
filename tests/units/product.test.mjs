@@ -83,6 +83,21 @@ describe('Product Service', function() {
             assert.deepEqual(fetchedProduct, product);
             assert(findByIdStub.calledOnce);
         });
+
+        it('should throw NotFound if product does not exist', async () => {
+            const productId = 'nonExistingProductId'; // Un ID de produit qui n'existe pas
+            
+            const productService = new ProductService();
+    
+            try {
+                await productService.get({ productId });
+                throw new Error('Test should have thrown NotFound');
+            } catch (error) {
+                // expect(error).to.be.instanceOf(NotFound);
+                assert.strictEqual(error.message, 'Produit introuvable.');
+                
+            }
+        });
     });
 
     describe('Update Product', function() {
